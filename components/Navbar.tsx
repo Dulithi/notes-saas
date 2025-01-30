@@ -3,6 +3,8 @@
 import Link from "next/link";
 import { ThemeToggle } from "./Themetoggle";
 import { Button } from "./ui/button";
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+
 
 export function Navbar() {
     return (
@@ -14,8 +16,8 @@ export function Navbar() {
                 <div className="flex items-center gap-x-5">
                     <ThemeToggle />
                     <div className="flex items-center gap-x-2">
-                        <Button>Sign In</Button> 
-                        <Button variant={"outline"}>Sign Up</Button>
+                        <LoginLink><Button>Sign In</Button></LoginLink>
+                        <RegisterLink><Button variant={"secondary"}>Sign Up</Button></RegisterLink>
                     </div>
                 </div>
 
