@@ -7,12 +7,16 @@ import {RegisterLink, LoginLink, LogoutLink} from "@kinde-oss/kinde-auth-nextjs/
 import {useKindeBrowserClient} from "@kinde-oss/kinde-auth-nextjs";
 
 export function Navbar() {
-    const {isAuthenticated} = useKindeBrowserClient();
+    const {isAuthenticated, getUser} = useKindeBrowserClient();
+    const user = getUser();
+    console.log(user?.email);
     return (
-        <nav className="border-b bg-backgrond flex items-center h-[10vh] px-10">
+        <nav className="border-b bg-backgrond flex items-center h-16 px-10">
             <div className="container flex items-center justify-between">
                 <Link href="/">
-                    <h1 className="font-bold text-3xl">NotesSaas</h1>
+                    <h1 className="font-bold text-3xl">
+                        Notes<span className="text-primary">Saas</span>
+                    </h1>
                 </Link>
                 <div className="flex items-center gap-x-5">
                     <ThemeToggle />

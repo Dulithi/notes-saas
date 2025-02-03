@@ -31,8 +31,10 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers> 
-          <Navbar />
-          {children}
+          <div className="sticky"><Navbar />
+          </div>
+          <div className="overflow-y-auto">{children}</div>
+          
         </Providers>
       </body>
     </html>
